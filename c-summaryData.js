@@ -17,8 +17,8 @@ const updateConfigWithSummary = () => {
   const summary = {
     domains: calculateTotal('domains'),
     assets: calculateTotal('assets'),
-    attributes: calculateTotal('attributes'),
-    relations: calculateTotal('relations'),
+    attributes: calculateTotal('allAttributes'),
+    relations: calculateTotal('allRelations'),
     tags: calculateTotal('tags')
   };
 
