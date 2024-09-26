@@ -1,23 +1,25 @@
 const createConfig = require('./1-getStarted');
-const getCommunities = require('./2-getCommunities');
-const processCommunities = require('./3-getDomains');
-const getTypes = require('./4-getTypes');
-const getGraphQLData = require('./5-getAssets');
-const fetchAllAttributes = require('./6-getAttributes');
-const fetchAllRelations = require('./7-getRelations');
-const fetchAllTags = require('./8-getTags');
-const extractUniqueTypes = require('./9-getUniqueTypes');
-const buildAssetTypesTree = require('./a-buildAssetTree');
-const buildDomainTypesTree = require('./d-buildDomainTypeTree');
-const compareAndCreateUniqueAttributeTypes = require('./e-getUniqueAttributeTypes');
-const compareAndCreateUniqueRelationTypes = require('./f-getUniqueRelationTypes');
-const compressFiles = require('./g-compressExports');  // Import the new compression script
+
 
 // Sequentially run the necessary scripts
 const runScripts = async () => {
   try {
     console.log('Running createConfig from 1-getStarted.js...');
     await createConfig();  // Waits for createConfig to complete
+
+    const getCommunities = require('./2-getCommunities');
+    const processCommunities = require('./3-getDomains');
+    const getTypes = require('./4-getTypes');
+    const getGraphQLData = require('./5-getAssets');
+    const fetchAllAttributes = require('./6-getAttributes');
+    const fetchAllRelations = require('./7-getRelations');
+    const fetchAllTags = require('./8-getTags');
+    const extractUniqueTypes = require('./9-getUniqueTypes');
+    const buildAssetTypesTree = require('./a-buildAssetTree');
+    const buildDomainTypesTree = require('./d-buildDomainTypeTree');
+    const compareAndCreateUniqueAttributeTypes = require('./e-getUniqueAttributeTypes');
+    const compareAndCreateUniqueRelationTypes = require('./f-getUniqueRelationTypes');
+    const compressFiles = require('./g-compressExports');  // Import the new compression script
 
     console.log('Running getCommunities from 2-getCommunities.js...');
     await getCommunities();  // Waits for getCommunities to complete
