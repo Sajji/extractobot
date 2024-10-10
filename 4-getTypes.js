@@ -40,13 +40,13 @@ const fetchData = async (endpoint, config) => {
       results = response.data.results.map(relationType => ({
         id: relationType.id,
         sourceTypeId: relationType.sourceType.id,
-        sourceTypeName: relationType.sourceType.name,
+        //sourceTypeName: relationType.sourceType.name,
         targetTypeId: relationType.targetType.id,
-        targetTypeName: relationType.targetType.name,
+        //targetTypeName: relationType.targetType.name,
         role: relationType.role,
         coRole: relationType.coRole,
-        description: relationType?.description,
-        uniqueKey: `${relationType.sourceType.id}${relationType.targetType.id}${relationType.role}${relationType.coRole}`
+        description: relationType?.description
+        //uniqueKey: `${relationType.sourceType.id}${relationType.targetType.id}${relationType.role}${relationType.coRole}`
       }));
       console.log(`${endpoint}: Downloaded ${results.length}`);
     } else if (endpoint === 'assetTypes') {
